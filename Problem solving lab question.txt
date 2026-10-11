@@ -1,0 +1,40 @@
+1. Write a program to check is an alphabet, digit or any special character.
+
+
+2. Write a program to check whether the entered digit is positive negative or zero 
+
+
+3. Write a program to check whether a triangle can be formed with the given values of angles
+
+
+4. Write a program to accept the coordinate points x, y and determine in which quadrant the coordinate points lies.
+
+
+
+
+#include <stdio.h>
+
+int main()
+{
+    char ch;
+
+    printf("Enter a character: ");
+    scanf("%c", &ch);
+
+    if ((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z'))
+    {
+        printf("It is an Alphabet.");
+    }
+    else if (ch >= '0' && ch <= '9')
+    {
+        printf("It is a Digit.");
+    }
+    else
+    {
+        printf("It is a Special Character.");
+    }
+
+    return 0;
+}
+
+

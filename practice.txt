@@ -1,0 +1,50 @@
+import time
+import sys
+
+# Original song lyrics
+lyrics = [
+    (0,  "Raat hai nayi, dil mein ek raaz hai"),
+    (5,  "Chand bhi jaise mere saath aaj hai"),
+    (10, "Hawaon mein koi dhun si baj rahi"),
+    (15, "Dil ki galiyon mein roshni saj rahi"),
+    (20, "Chal pade hum, sapno ke shehar"),
+    (25, "Door tak bas khushiyon ka safar"),
+    (30, "Aankhon mein kal ka ek naya khwaab"),
+    (35, "Dil kahe rukna nahi, jaana hai aage"),
+    (40, "La la la... dil gaaye aaj"),
+]
+
+duration = 45
+
+print("=" * 55)
+print("           🎵 MERA BOLLYWOOD SONG 🎵")
+print("=" * 55)
+
+start_time = time.time()
+
+for timestamp, line in lyrics:
+    # Wait until the correct timeline position
+    while time.time() - start_time < timestamp:
+        time.sleep(0.05)
+
+    elapsed = int(time.time() - start_time)
+    
+    # Timeline
+    progress = min(elapsed / duration, 1)
+    bar_length = 30
+    filled = int(progress * bar_length)
+    bar = "█" * filled + "─" * (bar_length - filled)
+
+    # Clear screen
+    print("\033[2J\033[H", end="")
+
+    print("🎵 MERA BOLLYWOOD SONG")
+    print()
+    print(f"[{bar}] {elapsed}s / {duration}s")
+    print()
+    print("♪  " + line)
+    print()
+
+print("=" * 55)
+print("             🎶 SONG FINISHED 🎶")
+print("=" * 55)s
